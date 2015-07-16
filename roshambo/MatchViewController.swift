@@ -13,6 +13,7 @@ class MatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start Over", style: .Plain, target: self, action: "startOver")
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +51,11 @@ class MatchViewController: UIViewController {
         controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultViewController
         controller.playerValue = 1
         controller.machineValue = self.generatePlay()
-        self.presentViewController(controller, animated: true, completion: nil)
+        // Old way to navigate without navigation controller
+        //self.presentViewController(controller, animated: true, completion: nil)
+        if let navigationController = self.navigationController {
+            navigationController.showViewController(controller, sender: self)
+        }
     }
     
     /*
@@ -59,6 +64,15 @@ class MatchViewController: UIViewController {
     */
     @IBAction func playRock() {
         self.performSegueWithIdentifier("playRock", sender: self)
+    }
+    
+    /*
+        Send app to the root
+    */
+    func startOver() {
+        if let navigationController = self.navigationController {
+            navigationController.popToRootViewControllerAnimated(true)
+        }
     }
 
 }

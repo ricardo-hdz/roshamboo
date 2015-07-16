@@ -24,6 +24,7 @@ class ResultViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         setResult()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start Over", style: .Plain, target: self, action: "startOver")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -75,6 +76,15 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func playAgain() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        //self.dismissViewControllerAnimated(true, completion: nil)
+        if let navigationController = self.navigationController {
+            navigationController.popToRootViewControllerAnimated(true)
+        }
+    }
+    
+    func startOver() {
+        if let navigationController = self.navigationController {
+            navigationController.popToRootViewControllerAnimated(true)
+        }
     }
 }

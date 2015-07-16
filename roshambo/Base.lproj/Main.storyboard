@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fez-Oj-k3Y">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="99k-Vw-T8L">
+            <objects>
+                <navigationController id="Fez-Oj-k3Y" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yna-mS-gxE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wAI-XT-hrM">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="02U-Ff-4Iv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UM9-Fq-jZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-518" y="297"/>
+        </scene>
         <!--Match View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -49,6 +68,7 @@
                             <constraint firstItem="l4s-87-hpD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="264" id="Kfu-iR-26q"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Lvt-PP-R0x"/>
                     <connections>
                         <segue destination="3Xv-Tp-7kn" kind="show" identifier="playRock" id="Cws-Qa-rJU"/>
                     </connections>
@@ -98,6 +118,7 @@
                             <constraint firstAttribute="centerX" secondItem="Rbu-sC-RGq" secondAttribute="centerX" id="wNN-GI-JNU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="G1H-nn-nb2"/>
                     <connections>
                         <outlet property="resultImage" destination="bXV-jq-0IV" id="OKq-5o-9OP"/>
                         <outlet property="resultLabel" destination="Rbu-sC-RGq" id="Ji9-FE-sqS"/>
